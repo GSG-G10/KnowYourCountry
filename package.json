@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/GSG-G10/KnowYourCountry/issues"
   },
-  "homepage": "https://github.com/GSG-G10/KnowYourCountry#readme"
+  "homepage": "https://github.com/GSG-G10/KnowYourCountry#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "env2": "^2.2.2"
+  }
 }
