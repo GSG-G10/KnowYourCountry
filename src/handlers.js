@@ -18,6 +18,7 @@ const handelHtml = (response) => {
 
 // handel extention page 
 const handleExtentiion = (response, endpoint) => {
+    console.log(endpoint);
     const extention = endpoint.split('.')[1];
     const extensionType = {
         css: 'text/css',
