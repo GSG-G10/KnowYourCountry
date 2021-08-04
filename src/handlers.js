@@ -49,7 +49,7 @@ const handleSearch = (response, endpoint) => {
       response.end('<h1>Internal server error.</h1>');
     } else {
       const requiredData = filterData(Searchvalue, JSON.parse(file));
-      response.writeHead(200, { 'content-Type': 'application/javascript' });
+      response.writeHead(200, { 'Content-Type': 'application/json' });
       response.end(JSON.stringify(requiredData));
     }
   });
