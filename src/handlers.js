@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-
+const filterData = require('./filterData');
 // handel html page
 const handelHtml = (response) => {
   const filePath = path.join(__dirname, '..', 'public', 'index.html');
@@ -39,6 +39,21 @@ const handleExtentiion = (response, endpoint) => {
     }
   });
 };
+// handle search
+const handleSearch = (response, endpoint) => {
+  const Searchvalue = endpoint.split('=')[1];
+  const filepath = path.join(__dirname, 'Data', 'city.json');
+  fs.readFile(filepath, 'utf-8', (error, file) => {
+    if (error) {
+      response.writeHead(500, { 'Content-Type': 'text/html' });
+      response.end('<h1>Internal server error.</h1>');
+    } else {
+      const requiredData = filterData(Searchvalue, JSON.parse(file));
+      response.writeHead(200, { 'content-Type': 'application/javascript' });
+      response.end(JSON.stringify(requiredData));
+    }
+  });
+};
 
 // handel erro
 
@@ -51,5 +66,6 @@ const handelError = (response) => {
 module.exports = {
   handelHtml,
   handleExtentiion,
+  handleSearch,
   handelError,
 };

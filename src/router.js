@@ -1,4 +1,6 @@
-const { handelHtml, handleExtentiion, handelError } = require('./handlers');
+const {
+  handelHtml, handleExtentiion, handleSearch, handelError,
+} = require('./handlers');
 
 const router = (request, respone) => {
   const endpoint = request.url;
@@ -6,6 +8,8 @@ const router = (request, respone) => {
     handelHtml(respone);
   } else if (endpoint.includes('public')) {
     handleExtentiion(respone, endpoint);
+  } else if (endpoint.includes('search')) {
+    handleSearch(respone, endpoint);
   } else {
     handelError(respone);
   }
