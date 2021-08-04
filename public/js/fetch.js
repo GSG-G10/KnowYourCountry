@@ -1,4 +1,4 @@
-// https://countriesnow.space/api/v0.1/countries/flag/images
+// To fetch data // using in apiDom
 const fetch = (url, cb) => {
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
