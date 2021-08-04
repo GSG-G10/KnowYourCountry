@@ -8,3 +8,5 @@ server.listen(port, () => {
   // eslint-disable-next-line no-console
   console.log(`server is listining on  http://localhost:${port}`);
 });
+
+module.exports = server;
