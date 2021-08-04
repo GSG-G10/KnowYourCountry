@@ -1,16 +1,61 @@
-.hidden{
-    display: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.hidden {
+  display: none;
 }
 
-.results-div{
-    width: 200px;
-    height: 200px;
-    background-color: blueviolet;
-}
-.auto-comp-res1{
-    width: 100px;
-    /* height: 100px; */
-    background-color: blue;
 .searchBtn {
-    background-color: red;
+  background-color: rgb(197, 195, 195);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 100px 0;
+  background-image: url(https://cdn.discordapp.com/attachments/872439712948822017/872477260945424494/world-hd-background-web-design-artwork-yellow-maps-country.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  position: sticky;
+  background-position: center;
+}
+
+.search-side {
+}
+
+#searchInput {
+  background-color: rgb(228, 228, 228);
+  padding: 0 20px 0 0;
+
+  width: 400px;
+  height: 50px;
+  border-radius: 8px;
+  border-style: none;
+}
+
+.searchBtn {
+  height: 50px;
+  width: 60px;
+  border-radius: 8px;
+}
+.img-side {
+  display: flex;
+  justify-content: center;
+  width: 225px;
+  height: 150px;
+}
+.img-div {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 400px) {
+  #searchInput {
+    width: 150px;
+    height: 30px;
+    border-radius: 8px;
+  }
 }
