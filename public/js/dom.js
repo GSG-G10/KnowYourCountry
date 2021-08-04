@@ -93,32 +93,3 @@ searchInput.onkeyup = () => {
 };
 
 
-
-
-
-/*
-
-function limitSuggestions() {
-  for (let i = 0; i < demo.length; i++) {
-    if (demo[i].startsWith(searchValue) && demo1.length <= 5) {
-      demo1.push(demo[i]);
-    }
-  }
-}
-
-function showSuggestions() {
-  let demo1 = [];
-  for (let i = 0; i < demo1.length; i++) {
-    let li = document.createElement("li");
-    li.classList.add("line_option");
-    li.textContent = demo1[i];
-    menuLines.appendChild(li);
-  }
-}
-
-function deleteSuggestions() {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
-  }
-}
-*/
