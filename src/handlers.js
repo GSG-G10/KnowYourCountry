@@ -17,20 +17,25 @@ const handelHtml = (response) => {
 }
 
 // handel extention page 
-const handleSearch = (response, endpoint) => {
-    const queryEndPoint = endpoint.split('?')[1];
-    const { query } = querystring.parse(queryEndPoint);
-    const filepath = path.join(__dirname, '.', 'words.txt');
-    fs.readFile(filepath, 'utf8', (error, contents) => {
+const handleExtentiion = (response, endpoint) => {
+    const extention = endpoint.split('.')[1];
+    const extensionType = {
+        css: 'text/css',
+        js: 'application/javascript',
+        ico: 'image/x-ico',
+        png: 'image/png',
+        html: 'text/html',
+        jpeg: 'image/jpeg',
+        jpg: 'image/jpg',
+    };
+    const filepath = path.join(__dirname, '..', endpoint);
+    fs.readFile(filepath, (error, file) => {
         if (error) {
             response.writeHead(500, { 'Content-Type': 'text/html' });
             response.end('<h1>Internal server error.</h1>');
         } else {
-            let regs = process.platform === "win32" ? '\r\n' : '\n'
-            const wordsArr = contents.split(regs);
-            const result = wordsArr.filter((word) => word.startsWith(query)).slice(0, 20)
-            response.writeHead(200, { 'Content-Type': 'application/json' });
-            response.end(JSON.stringify(result));
+            response.writeHead(200, { 'content-Type': extensionType[extention] });
+            response.end(file);
         }
     });
 };
