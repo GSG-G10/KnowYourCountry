@@ -3,6 +3,7 @@ const searchInput = document.getElementById('searchInput');
 const searchBtn = document.querySelector('.searchBtn');
 const getImg = (CounteryName) => {
   fetch(' https://countriesnow.space/api/v0.1/countries/flag/images', (data) => {
+    console.log(data)
     for (let i = 0; i < data.data.length; i += 1) {
       if (data.data[i].name === CounteryName) {
         imgContainer.textContent = '';

@@ -1,4 +1,5 @@
 // To fetch data // using in apiDom
+// eslint-disable-next-line no-unused-vars
 const fetch = (url, cb) => {
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
