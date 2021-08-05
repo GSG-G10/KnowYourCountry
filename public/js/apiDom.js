@@ -20,6 +20,7 @@ const getImg = (CounteryName) => {
 searchBtn.addEventListener('click', () => {
   const countery = searchInput.value;
   getImg(countery);
+
 });
 
 searchInput.addEventListener('keypress', (e) => {
